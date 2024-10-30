@@ -1,0 +1,165 @@
+.ranking-container {
+  display: grid;
+  gap: 10px;
+  align-items: end;
+}
+
+/* Grid Areas */
+.first-place { 
+  grid-area: first; 
+}
+.second-place { 
+  grid-area: second; 
+}
+.third-place { 
+  grid-area: third; 
+}
+.fourth-place {
+  grid-area: fourth; 
+}
+.sixth-place { 
+  grid-area: sixth; 
+}
+
+/* Common Styles */
+.ranking-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+
+.trophy-wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ranking-details {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.price-tag {
+  font-size: 0.8rem;
+  margin-top: 3px;
+}
+
+.label-text {
+  font-size: 0.6rem;
+  color: #9b9999;
+  margin-top: 3px;
+}
+
+/* Desktop Layout */
+@media (min-width: 769px) {
+  .ranking-container {
+    grid-template-areas: "fourth second first third sixth";
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .ranking-item {
+    width: 120px;
+    height: 160px;
+  }
+
+  .trophy-wrapper {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .trophy-icon {
+    width: 120px;
+    height: auto;
+  }
+
+  .trophy-icon-first {
+    top: -55px;
+  }
+
+  .trophy-icon-sec,
+  .trophy-icon-third {
+    top: -40px;
+  }
+
+  .ranking-details {
+    padding-top: 5px;
+    height: 57.5%;
+  }
+
+  .ranking-label {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .ranking-price {
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+  .ranking-container {
+    grid-template-areas:
+      "second second first first third third"
+      "fourth fourth fourth sixth sixth sixth";
+    grid-template-columns: repeat(6, 1fr);
+    width: fit-content;
+    min-width: 300px;
+    justify-items: center;
+  }
+
+  .ranking-item {
+    height: auto;
+  }
+
+  .first-place,
+  .second-place,
+  .third-place {
+    width: 85%;
+    height: 100px;
+  }
+
+  .fourth-place,
+  .sixth-place {
+    width: 90%;
+  }
+
+  .trophy-icon {
+    width: 55px;
+  }
+
+  .trophy-icon-first {
+    top: -20%;
+  }
+
+  .trophy-icon-sec,
+  .trophy-icon-third {
+    top: -10%;
+  }
+
+  .ranking-details {
+    padding-top: 10;
+  }
+
+  .ranking-label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .ranking-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+}
